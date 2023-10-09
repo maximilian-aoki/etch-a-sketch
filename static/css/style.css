@@ -26,13 +26,63 @@ body {
 .nav-container {
   flex: none;
   height: 50px;
+  display: flex;
 }
 
-.content-container {
+.main-container {
   flex: 1 0 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-container {
+  height: 100px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.interactive-container {
+  height: 500px;
+  display: flex;
+}
+
+.options-container {
+  width: 150px;
+}
+
+.sketch-container {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  height: 480px;
+  width: 480px;
+  border: 10px solid #294627;
 }
 
 .footer-container {
   flex: none;
-  height: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
