@@ -18,7 +18,7 @@ body {
 
 /* use border for debugging flexbox! */
 * {
-  border: 1px solid rgb(214, 214, 214); 
+  /* border: 1px solid rgb(214, 214, 214);  */
   margin: 0;
   padding: 0;
 }
@@ -27,6 +27,8 @@ body {
   flex: none;
   height: 50px;
   display: flex;
+  background-color: #294627;
+  color: white;
 }
 
 .main-container {
@@ -63,7 +65,42 @@ body {
 }
 
 .options-container {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.console {
   width: 150px;
+  height: 490px;
+  border: 3px solid #294627;
+  background-color: #eaf0ea;
+  display: flex;
+  flex-direction: column;
+}
+
+.console-divider {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+}
+
+.button-div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.size-options {
+  flex: 2;
+}
+
+button {
+  height: 25px;
 }
 
 .sketch-container {
@@ -74,9 +111,13 @@ body {
 }
 
 .canvas {
-  height: 480px;
-  width: 480px;
-  border: 10px solid #294627;
+  height: 490px;
+  width: 490px;
+  border: 5px solid #294627;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-container {
@@ -85,4 +126,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #294627;
+  color: white;
 }
