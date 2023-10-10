@@ -21,8 +21,9 @@ function changeCanvasSize(factor, size) {
     let newDiv = document.createElement('div');
     newDiv.style.width = size;
     newDiv.style.height = size;
+    newDiv.classList.add('paintable');
     newDiv.style.backgroundColor = 'white';
-    newDiv.style.border = '1px solid grey';
+    // newDiv.style.border = '1px solid grey';
   
     newCanvas.appendChild(newDiv);
   }
@@ -92,11 +93,29 @@ clearButton.addEventListener('click', () => {
   changeCanvasSize(canvasFactor, canvasSize);
 })
 
-// listen to mousedown over canvas and paint
-canvasContainer.addEventListener('mousedown', (e) => {
-  e.target.style.backgroundColor = getColor();
-});
+// --------- PAINT EVENT FUNCTIONS AND LISTENERS --------- //
 
+// if drag condition failed, remove listeners
+function deleteListeners() {
+  window.removeEventListener('mouseup', deleteListeners);
+  canvasContainer.removeEventListener('mouseover', paintSquare);
+}
+
+// finally, logic for if to paint a square, else remove listeners
+function paintSquare(e) {
+  if (e.target.getAttribute('class') === "paintable") {
+    e.target.style.backgroundColor = getColor();
+  } else {
+    deleteListeners();
+  }
+}
+
+// top-level listener to the canvas
+canvasContainer.addEventListener('mousedown', (e) => {
+  paintSquare(e);
+  window.addEventListener('mouseup', deleteListeners);
+  canvasContainer.addEventListener('mouseover', paintSquare);
+});
 
 // -------------- INITIALIZER FUNCTIONS! -------------- //
 
