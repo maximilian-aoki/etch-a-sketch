@@ -27,8 +27,22 @@ body {
   flex: none;
   height: 50px;
   display: flex;
+  justify-content: center;
   background-color: #294627;
   color: white;
+}
+
+.nav-bar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
 }
 
 .main-container {
